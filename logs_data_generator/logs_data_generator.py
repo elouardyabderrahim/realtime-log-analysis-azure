@@ -151,8 +151,7 @@ def generate_log_entry():
     action = anomalies.get("unusual_action", action)
     cart_size = anomalies.get("high_cart_size", cart_size)
 
-    log_entry = f"{timestamp} | {log_level} | database query time : {db_query_time} | server processing time : {server_processing_time} | network latency : {network_latency} | Response Time: {response_time}s | {request_id} | {session_id} | {user_id} | {action} | {http_method} | {url} | Referrer: {referrer_url} | IP: {ip_address} | Agent: {user_agent} | Product ID: {product_id} | Cart Size: {cart_size} | Checkout Status: {checkout_status} | Token: {token} | Auth Method: {auth_method} | Auth Level: {auth_level} | Correlation ID: {correlation_id} | Server IP: {server_ip} | Port: {port_number} | Protocol: {protocol} | {status_and_detail}"
-    return log_entry
+    log_entry = f"timestamp : {timestamp} | log_level : {log_level} | database query time : {db_query_time} | server processing time : {server_processing_time} | network latency : {network_latency} | Response Time : {response_time}s | request_id : {request_id} | session_id : {session_id} |user_id :  {user_id} | action : {action} | http_method : {http_method} | url : {url} | Referrer : {referrer_url} | IP : {ip_address} | Agent : {user_agent} | Product ID : {product_id} | Cart Size : {cart_size} | Checkout Status : {checkout_status} | Token : {token} | Auth Method : {auth_method} | Auth Level : {auth_level} | Correlation ID : {correlation_id} | Server IP : {server_ip} | Port : {port_number} | Protocol : {protocol} | status_and_detail : {status_and_detail}"
 
 while True:
     print(generate_log_entry())
